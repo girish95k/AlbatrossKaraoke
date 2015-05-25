@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Albatross Karaoke</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_choose_file">ChooseFileActivity</string>
+    <string name="title_activity_playing">PlayingActivity</string>
+</resources>

@@ -3,10 +3,11 @@
     package="com.albatross.girish.albatrosskaraoke" >
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/microphone"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
@@ -24,7 +25,8 @@
         </activity>
         <activity
             android:name=".PlayingActivity"
-            android:label="@string/title_activity_playing" >
+            android:label="@string/title_activity_playing"
+            android:screenOrientation="portrait">
         </activity>
 
         <activity

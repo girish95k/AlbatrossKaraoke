@@ -11,6 +11,8 @@ package com.albatross.girish.albatrosskaraoke;
  * @author Girish
  */
 
+import android.os.Environment;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -22,6 +24,7 @@ import java.util.List;
 
 class KFNDumper
 {
+    String root = Environment.getExternalStorageDirectory().toString();
     public static final int TYPE_SONGTEXT = 1;
     public static final int TYPE_MUSIC = 2;
     public static final int TYPE_IMAGE = 3;
@@ -110,11 +113,11 @@ class KFNDumper
     public void extract( final Entry entry, String outfilename ) throws IOException
     {
 
-        File theDir = new File("/storage/emulated/0/AlbatrossKaraoke/");
-
+        //File theDir = new File("/storage/emulated/0/AlbatrossKaraoke/"); ---------
+        File theDir = new File(root + "/AlbatrossKaraoke/");
         // if the directory does not exist, create it
         if (!theDir.exists()) {
-            System.out.println("creating directory: " + "/storage/emulated/0/AlbatrossKaraoke/");
+            System.out.println("creating directory: " + root + "/AlbatrossKaraoke/");
             boolean result = false;
 
             try{
@@ -133,8 +136,8 @@ class KFNDumper
         m_file.seek( entry.offset );
  
         // Create the output file
-        FileOutputStream output = new FileOutputStream( "/storage/emulated/0/AlbatrossKaraoke/" + outfilename );
- 
+        //FileOutputStream output = new FileOutputStream( "/storage/emulated/0/AlbatrossKaraoke/" + outfilename ); ---------
+        FileOutputStream output = new FileOutputStream(root + "/AlbatrossKaraoke/" + outfilename );
         byte[] buffer = new byte[8192];
         int totalRead = 0;
  

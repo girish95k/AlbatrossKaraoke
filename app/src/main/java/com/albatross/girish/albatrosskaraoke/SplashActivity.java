@@ -1,5 +1,6 @@
 package com.albatross.girish.albatrosskaraoke;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
@@ -10,7 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 
-public class SplashActivity extends ActionBarActivity {
+public class SplashActivity extends Activity {
 
     private final int SPLASH_DISPLAY_LENGHT = 2000;
 

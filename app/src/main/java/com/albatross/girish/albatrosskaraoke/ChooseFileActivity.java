@@ -6,6 +6,7 @@ import android.content.ClipData;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.Spannable;
@@ -26,6 +27,7 @@ import java.util.ArrayList;
 public class ChooseFileActivity extends ActionBarActivity {
 
     TextView tv;
+    String root = Environment.getExternalStorageDirectory().toString();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,8 @@ public class ChooseFileActivity extends ActionBarActivity {
                 i.putExtra(FilePickerActivity.EXTRA_MODE, FilePickerActivity.MODE_FILE);
 
                 // Configure initial directory like so
-                i.putExtra(FilePickerActivity.EXTRA_START_PATH, "/storage/emulated/0/");
+                //i.putExtra(FilePickerActivity.EXTRA_START_PATH, "/storage/emulated/0/"); --------
+                i.putExtra(FilePickerActivity.EXTRA_START_PATH, root);
 
                 startActivityForResult(i, 1);
 
@@ -67,7 +70,8 @@ public class ChooseFileActivity extends ActionBarActivity {
                 i.putExtra(FilePickerActivity.EXTRA_MODE, FilePickerActivity.MODE_FILE);
 
                 // Configure initial directory like so
-                i.putExtra(FilePickerActivity.EXTRA_START_PATH, "/storage/emulated/0/");
+                //i.putExtra(FilePickerActivity.EXTRA_START_PATH, "/storage/emulated/0/"); -----
+                i.putExtra(FilePickerActivity.EXTRA_START_PATH, root);
 
                 startActivityForResult(i, 1);
             }

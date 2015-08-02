@@ -92,7 +92,7 @@ public class ChooseFileActivity extends ActionBarActivity {
                         for (int i = 0; i < clip.getItemCount(); i++) {
                             Uri uri = clip.getItemAt(i).getUri();
                             // Do something with the URI
-                            String a[] = {uri.getEncodedPath()};
+                            String a[] = {uri.getEncodedPath().replace("%20", " ")};
                             try {
                                 String fileName = KFNDumper.call(a);
                                 Thread.sleep(150);
@@ -121,7 +121,7 @@ public class ChooseFileActivity extends ActionBarActivity {
                         for (String path: paths) {
                             Uri uri = Uri.parse(path);
                             // Do something with the URI
-                            String a[] = {uri.getEncodedPath()};
+                            String a[] = {uri.getEncodedPath().replace("%20", " ")};
                             try {
                                 String fileName = KFNDumper.call(a);
                                 Thread.sleep(150);
@@ -152,7 +152,8 @@ public class ChooseFileActivity extends ActionBarActivity {
                 spanText.setSpan(new BackgroundColorSpan(0xFFFFFF00), 14, 19, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 //tv.setText(spanText);
                 //tv.setText(uri.getEncodedPath());
-                String a[] = {uri.getEncodedPath()};
+                String a[] = {uri.getEncodedPath().replace("%20", " ")};
+                Log.e("encoded path", a[0]);
                 try {
                     String fileName = KFNDumper.call(a);
                     Thread.sleep(150);

@@ -416,6 +416,7 @@ public class PlayingActivity extends Activity implements OnCompletionListener,
         int tempLineIndex = lineIndex;
         for(Iterator<TextView> it = mTextViewList.iterator(); it.hasNext(); ) {
             TextView lineTv = it.next();
+            lineTv.setTextSize(23);
             if (tempLineIndex < mLines.size()) {
                 lineTv.setText(mLines.get(tempLineIndex++));
                 lineTv.setTextColor(Color.WHITE);

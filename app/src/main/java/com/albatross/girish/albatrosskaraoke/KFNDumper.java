@@ -12,6 +12,7 @@ package com.albatross.girish.albatrosskaraoke;
  */
 
 import android.os.Environment;
+import android.util.Log;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -191,6 +192,7 @@ class KFNDumper
         }
  
         KFNDumper kfnfile = new KFNDumper( args[0] );
+        Log.e("args", kfnfile.toString());
         List<Entry> entries = kfnfile.list();
 
         String temp = null;
@@ -199,6 +201,7 @@ class KFNDumper
             if(entry.type == 2)
             {
                 temp = entry.filename;
+                Log.e("entry filename", temp);
             }
             System.out.println( "File " + entry.filename + ", type: " + entry.type + ", length1: "
                                            + entry.length1 + ", length2: " + entry.length2 + ", offset: "
